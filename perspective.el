@@ -367,7 +367,9 @@ buffer called \"*scratch* (NAME)\"."
   (make-persp :name name
     (switch-to-buffer (concat "*scratch* (" name ")"))
     (funcall initial-major-mode)
-    (delete-other-windows)))
+    (let ((backup-minibuf (window-buffer (minibuffer-window))))
+      (delete-other-windows)
+      (set-window-buffer (minibuffer-window) backup-minibuf t))))
 
 (defun persp-reactivate-buffers (buffers)
   "Raise BUFFERS to the top of the most-recently-selected list.
