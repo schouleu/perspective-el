@@ -249,7 +249,7 @@ perspective-local values."))
 Dynamically bound by `persp-protect'.")
 
 (defface persp-selected-face
-  '((t (:weight bold :foreground "Blue")))
+  '((t (:weight bold :foreground "DeepSkyBlue")))
   "The face used to highlight the current perspective on the modeline.")
 
 (defmacro persp-protect (&rest body)
